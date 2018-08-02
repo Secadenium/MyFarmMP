@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="gameLayout" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="339.0" layoutX="331.0" layoutY="526.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/jeffcapistrano/Desktop/Border.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="100.0" layoutY="100.0" prefHeight="400.0" prefWidth="800.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="83.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="81.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+               <image>
+                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
+               </image>
+            </ImageView>
+            <Button mnemonicParsing="false" opacity="0.0" prefHeight="99.0" prefWidth="118.0" GridPane.rowIndex="1" />
+            <Button fx:id="button01" mnemonicParsing="false" opacity="0.0" prefHeight="149.0" prefWidth="146.0" GridPane.columnIndex="1" />
+            <Button fx:id="button02" mnemonicParsing="false" opacity="0.0" prefHeight="220.0" prefWidth="265.0" GridPane.columnIndex="2" />
+            <Button fx:id="button03" mnemonicParsing="false" opacity="0.0" prefHeight="194.0" prefWidth="230.0" GridPane.columnIndex="3" />
+            <Button fx:id="button04" mnemonicParsing="false" opacity="0.0" prefHeight="229.0" prefWidth="352.0" GridPane.columnIndex="4" />
+            <Button fx:id="button05" mnemonicParsing="false" opacity="0.0" prefHeight="226.0" prefWidth="276.0" GridPane.columnIndex="5" />
+            <Button fx:id="button06" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="272.0" GridPane.columnIndex="6" />
+            <Button fx:id="button07" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="303.0" GridPane.columnIndex="7" />
+            <Button fx:id="button08" mnemonicParsing="false" opacity="0.0" prefHeight="232.0" prefWidth="308.0" GridPane.columnIndex="8" />
+            <Button fx:id="button09" mnemonicParsing="false" opacity="0.0" prefHeight="172.0" prefWidth="193.0" GridPane.columnIndex="9" />
+            <Button fx:id="button10" mnemonicParsing="false" opacity="0.0" prefHeight="154.0" prefWidth="152.0" GridPane.rowIndex="1" />
+            <Button fx:id="button20" mnemonicParsing="false" opacity="0.0" prefHeight="224.0" prefWidth="196.0" GridPane.rowIndex="2" />
+            <Button fx:id="button30" mnemonicParsing="false" opacity="0.0" prefHeight="208.0" prefWidth="207.0" GridPane.rowIndex="3" />
+            <Button fx:id="button40" mnemonicParsing="false" opacity="0.0" prefHeight="222.0" prefWidth="247.0" GridPane.rowIndex="4" />
+            <Button fx:id="button11" mnemonicParsing="false" opacity="0.0" prefHeight="171.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="button21" mnemonicParsing="false" opacity="0.0" prefHeight="163.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button fx:id="button31" mnemonicParsing="false" opacity="0.0" prefHeight="196.0" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="button41" mnemonicParsing="false" opacity="0.0" prefHeight="152.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button fx:id="button12" mnemonicParsing="false" opacity="0.0" prefHeight="143.0" prefWidth="164.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button fx:id="button22" mnemonicParsing="false" opacity="0.0" prefHeight="167.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Button fx:id="button32" mnemonicParsing="false" opacity="0.0" prefHeight="94.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Button fx:id="button42" mnemonicParsing="false" opacity="0.0" prefHeight="148.0" prefWidth="183.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Button fx:id="button13" mnemonicParsing="false" opacity="0.0" prefHeight="168.0" prefWidth="173.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Button fx:id="button23" mnemonicParsing="false" opacity="0.0" prefHeight="240.0" prefWidth="201.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button fx:id="button33" mnemonicParsing="false" opacity="0.0" prefHeight="156.0" prefWidth="182.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Button fx:id="button43" mnemonicParsing="false" opacity="0.0" prefHeight="243.0" prefWidth="314.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Button fx:id="button14" mnemonicParsing="false" opacity="0.0" prefHeight="182.0" prefWidth="301.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button fx:id="button24" mnemonicParsing="false" opacity="0.0" prefHeight="323.0" prefWidth="348.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <Button fx:id="button34" mnemonicParsing="false" opacity="0.0" prefHeight="325.0" prefWidth="326.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Button fx:id="button44" mnemonicParsing="false" opacity="0.0" prefHeight="248.0" prefWidth="275.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+            <Button fx:id="button15" mnemonicParsing="false" opacity="0.0" prefHeight="138.0" prefWidth="198.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button fx:id="button25" mnemonicParsing="false" opacity="0.0" prefHeight="206.0" prefWidth="247.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+            <Button fx:id="button35" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="271.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
+            <Button fx:id="button45" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="328.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+            <Button fx:id="button16" mnemonicParsing="false" opacity="0.0" prefHeight="171.0" prefWidth="235.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button fx:id="button26" mnemonicParsing="false" opacity="0.0" prefHeight="219.0" prefWidth="207.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Button fx:id="button36" mnemonicParsing="false" opacity="0.0" prefHeight="133.0" prefWidth="158.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+            <Button fx:id="button46" mnemonicParsing="false" opacity="0.0" prefHeight="311.0" prefWidth="281.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+            <Button fx:id="button17" mnemonicParsing="false" opacity="0.0" prefHeight="142.0" prefWidth="163.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
+            <Button fx:id="button27" mnemonicParsing="false" opacity="0.0" prefHeight="140.0" prefWidth="198.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
+            <Button fx:id="button37" mnemonicParsing="false" opacity="0.0" prefHeight="250.0" prefWidth="284.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
+            <Button fx:id="button47" mnemonicParsing="false" opacity="0.0" prefHeight="252.0" prefWidth="285.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
+            <Button fx:id="button18" mnemonicParsing="false" opacity="0.0" prefHeight="129.0" prefWidth="178.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Button fx:id="button19" mnemonicParsing="false" opacity="0.0" prefHeight="153.0" prefWidth="208.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <Button fx:id="button28" mnemonicParsing="false" opacity="0.0" prefHeight="226.0" prefWidth="302.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
+            <Button fx:id="button29" mnemonicParsing="false" opacity="0.0" prefHeight="170.0" prefWidth="227.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
+            <Button fx:id="button38" mnemonicParsing="false" opacity="0.0" prefHeight="153.0" prefWidth="242.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
+            <Button fx:id="button39" mnemonicParsing="false" opacity="0.0" prefHeight="163.0" prefWidth="235.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
+            <Button fx:id="button48" mnemonicParsing="false" opacity="0.0" prefHeight="195.0" prefWidth="216.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
+            <Button fx:id="button49" mnemonicParsing="false" opacity="0.0" prefHeight="342.0" prefWidth="233.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
+            <Button fx:id="button00" mnemonicParsing="false" opacity="0.0" prefHeight="154.0" prefWidth="152.0" />
+         </children>
+      </GridPane>
+      <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/Users/jeffcapistrano/Desktop/Background.png" />
+         </image>
+      </ImageView>
+      <GridPane gridLinesVisible="true" layoutX="380.0" layoutY="540.0" prefHeight="50.0" prefWidth="325.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="tool1" mnemonicParsing="false" prefHeight="174.0" prefWidth="158.0" />
+            <Button mnemonicParsing="false" prefHeight="102.0" prefWidth="87.0" GridPane.columnIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="178.0" prefWidth="159.0" GridPane.columnIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="159.0" prefWidth="136.0" GridPane.columnIndex="3" />
+            <Button mnemonicParsing="false" prefHeight="139.0" prefWidth="138.0" GridPane.columnIndex="4" />
+            <Button mnemonicParsing="false" prefHeight="149.0" prefWidth="165.0" GridPane.columnIndex="5" />
+         </children>
+      </GridPane>
+      <GridPane gridLinesVisible="true" layoutX="556.0" layoutY="507.0" prefHeight="91.0" prefWidth="316.0" visible="false">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="48.66558837890625" minHeight="10.0" prefHeight="43.14239501953125" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="42.5943603515625" minHeight="10.0" prefHeight="38.85760498046875" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+      <ProgressBar layoutX="253.0" layoutY="12.0" prefHeight="20.0" prefWidth="130.0" progress="0.0" />
+      <Label fx:id="name" layoutX="74.0" layoutY="14.0" text="NAME" textFill="WHITE">
+         <font>
+            <Font name="Stardew Valley Regular" size="13.0" />
+         </font></Label>
+      <Label fx:id="level" layoutX="227.0" layoutY="14.0" text="1" textFill="WHITE">
+         <font>
+            <Font name="Stardew Valley Regular" size="13.0" />
+         </font></Label>
+      <Label fx:id="gold" layoutX="838.0" layoutY="14.0" text="Gold" textFill="WHITE">
+         <font>
+            <Font name="Stardew Valley Regular" size="13.0" />
+         </font></Label>
+      <Label fx:id="time" layoutX="945.0" layoutY="14.0" text="Time" textFill="#f2f2f2">
+         <font>
+            <Font name="Stardew Valley Regular" size="13.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
