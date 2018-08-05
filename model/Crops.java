@@ -1,3 +1,5 @@
+package model;
+
 public class Crops {
     private String seedName;
     private int cropType;

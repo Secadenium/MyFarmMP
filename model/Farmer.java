@@ -1,3 +1,7 @@
+package model;
+
+import model.Crops;
+
 public class Farmer {
     private String name;
     private boolean isMale;

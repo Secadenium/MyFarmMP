@@ -1,6 +1,7 @@
+package model;
 import java.util.*;
 
-public class Apple extends Crops{
+public class Apple extends Crops {
     public Apple(){
         super("Apple",2,7,7,7,5,4,3,7,55,3.5,3);
         Random rand = new Random();

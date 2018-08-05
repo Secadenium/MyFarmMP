@@ -1,3 +1,4 @@
+package model;
 import java.util.*;
 
 public class Carrot extends Crops{

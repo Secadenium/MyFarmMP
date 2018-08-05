@@ -1,3 +1,4 @@
+package model;
 public class Tools {
     private int fertilizer;
     private Tiles tile;
