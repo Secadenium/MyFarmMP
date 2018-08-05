@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="menuLayout" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <MediaView fx:id="menuMusic" fitHeight="200.0" fitWidth="200.0" layoutX="139.0" layoutY="150.0" visible="false" />
+      <MediaView fx:id="menuMedia" fitHeight="600.0" fitWidth="1000.0" preserveRatio="false" />
+      <Label fx:id="start" layoutX="450.0" layoutY="423.0" opacity="0.0" text="S T A R T" textFill="#ffc62b">
+         <font>
+            <Font name="Geometric 415 Black BT" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="300.0" layoutY="38.0" prefHeight="100.0" prefWidth="400.0" text="Fire Watch" textAlignment="CENTER" textFill="#e8b349">
+         <font>
+            <Font name="Geometric 415 Black BT" size="71.0" />
+         </font></Label>
+      <Label alignment="CENTER" layoutX="338.0" layoutY="100.0" prefHeight="76.0" prefWidth="325.0" text="Farming Simulation" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Geometric 706 Black Condensed BT" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="startButton" disable="true" layoutX="425.0" layoutY="412.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="153.0" text="S T A R T" textAlignment="CENTER">
+         <font>
+            <Font name="Impact" size="27.0" />
+         </font></Button>
+      <TextField fx:id="userName" layoutX="417.0" layoutY="549.0" />
+      <Label layoutX="470.0" layoutY="516.0" text="Name" textFill="#f2d235">
+         <font>
+            <Font name="Geometric 415 Black BT" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
