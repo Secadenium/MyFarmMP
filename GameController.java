@@ -1,32 +1,18 @@
 package controller;
+import application.Main;
 import javafx.animation.AnimationTimer;
-import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Pos;
-import javafx.scene.ImageCursor;
 import javafx.scene.Node;
-import javafx.scene.Cursor;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.event.ActionEvent;
-
-import application.Main;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
-import model.Crops;
-import model.Tiles;
-import model.Inventory;
-import model.Farmer;
 import javafx.scene.layout.StackPane;
-import model.Turnip;
+import model.*;
 
 import java.util.ArrayList;
 
@@ -57,6 +43,7 @@ public class GameController {
     @FXML private Label seedAmount;
     @FXML private Label displayCost;
     @FXML private Button inventoryBack;
+    @FXML private Label xpStat;
 
     private Main main;
     private Farmer farmer;
@@ -69,7 +56,6 @@ public class GameController {
     private boolean cursorEquipped;
     private int plantIndex;
     private int buyIndex;
-    private boolean isTree;
 
     private ArrayList<Tiles> tile;
 
@@ -99,8 +85,18 @@ public class GameController {
                 }
                 else
                     time.setText(minute+":"+elapse);
+
+                gold.setText(""+farmer.getMoney());
+                xpStat.setText(farmer.getExp()+" / "+(farmer.getLevel()*100));
+                level.setText(""+farmer.getLevel());
+                if(farmer.getExp()>=farmer.getLevel()*100) {
+                    farmer.setExp(farmer.getExp() - (farmer.getLevel() * 100));
+                    farmer.setLevel(farmer.getLevel()+1);
+                    farmer.levelBonus();
+                }
             }
         };
+
         animationTimer.start();
 
         plantIndex=100;
@@ -155,66 +151,82 @@ public class GameController {
                 final int i=a;
                 final int j=b;
 
+                    ((Button) grid[i][j]).setOnMouseEntered(new EventHandler<MouseEvent>() {
+                        @Override
+                        public void handle(MouseEvent event) {
+                            if(tile.get(j+(i*y)).isHasPlant()) {
+                                ((Button) grid[i][j]).setTooltip(new Tooltip(tile.get(j + (i * y)).getCrop().displayInfoCrop()+
+                                        "\nWater Used: "+tile.get(j + (i * y)).getWaterUsed()+"\nFertilizer Used: "+tile.get(j+(i*y)).getFertilizerUsed()));
+                            }
+                        }
+                    });
+
                 ((Button)grid[i][j]).setOnAction(new EventHandler<ActionEvent>() {
                     @Override
-                        public void handle(ActionEvent event){
+                            public void handle(ActionEvent event){
                         System.out.println(tile.get(j+(i*y)).isPlowed() + " 2 TEST");
-                        if(plantIndex==0&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()){
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Beet_Stage",i,j,y,0);
-                        }
-                        else if(plantIndex==1&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Parsnip_Stage",i,j,y,1);
-                        }
-                        else if(plantIndex==2&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Tomato_Stage",i,j,y,2);
-                        }
-                        else if(plantIndex==3&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Potato_Stage",i,j,y,3);
-                        }
-                        else if(plantIndex==4&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Fairy_Rose_Stage",i,j,y,4);
-                        }
-                        else if(plantIndex==5&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Tulip_Stage",i,j,y,5);
-                        }
-                        else if(plantIndex==6&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Summer_Spangle_Stage",i,j,y,6);
-                        }
-                        else if(plantIndex==7&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            tile.get(j+(i*y)).setHasPlant(true);
-                            tile.get(j+(i*y)).setOccupied(true);
-                            seedAnimation(plant,"Sunflower_Stage",i,j,y,7);
-                        }
-                        else if(plantIndex==8&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            setOccupyAll(plant, j, i, y);
-                        }
-                        else if(plantIndex==9&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            setOccupyAll(plant, j, i, y);
-                        }
-                        else if(plantIndex==10&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            setOccupyAll(plant, j, i, y);
-                        }
-                        else if(plantIndex==11&&tile.get(j+(i*y)).isPlowed()&&!tile.get(j+(i*y)).isHasPlant()) {
-                            setOccupyAll(plant, j, i, y);
+                        if(!tile.get(j+(i*y)).isHasPlant()){
+                            if (plantIndex == 0 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Beet_Stage", i, j, y, 0);
+                                farmer.getInventory().setTurnipCount(farmer.getInventory().getTurnipCount()-1);
+                            } else if (plantIndex == 1 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Parsnip_Stage", i, j, y, 1);
+                                farmer.getInventory().setCarrotCount(farmer.getInventory().getCarrotCount()-1);
+                            } else if (plantIndex == 2 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Tomato_Stage", i, j, y, 2);
+                                farmer.getInventory().setTomatoCount(farmer.getInventory().getTomatoCount()-1);
+                            } else if (plantIndex == 3 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Potato_Stage", i, j, y, 3);
+                                farmer.getInventory().setPotatoCount(farmer.getInventory().getPotatoCount()-1);
+                            } else if (plantIndex == 4 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Fairy_Rose_Stage", i, j, y, 4);
+                                farmer.getInventory().setRoseCount(farmer.getInventory().getRoseCount()-1);
+                            } else if (plantIndex == 5 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Tulip_Stage", i, j, y, 5);
+                                farmer.getInventory().setTulipCount(farmer.getInventory().getTulipCount()-1);
+                            } else if (plantIndex == 6 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Summer_Spangle_Stage", i, j, y, 6);
+                                farmer.getInventory().setStargazerCount(farmer.getInventory().getStargazerCount()-1);
+                            } else if (plantIndex == 7 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Sunflower_Stage", i, j, y, 7);
+                                farmer.getInventory().setSunflowerCount(farmer.getInventory().getSunflowerCount()-1);
+                            } else if (plantIndex == 8 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Apricot_Stage", i, j, y, 8);
+                                farmer.getInventory().setMangoCount(farmer.getInventory().getMangoCount()-1);
+                            } else if (plantIndex == 9 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Apple_Stage", i, j, y, 9);
+                                farmer.getInventory().setAppleCount(farmer.getInventory().getAppleCount()-1);
+                            } else if (plantIndex == 10 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "100px-Palm_Stage", i, j, y, 10);
+                                farmer.getInventory().setBananaCount(farmer.getInventory().getBananaCount()-1);
+                            } else if (plantIndex == 11 && tile.get(j + (i * y)).isPlowed()) {
+                                seedAnimation(plant, "Orange_Stage", i, j, y, 11);
+                                farmer.getInventory().setOrangeCount(farmer.getInventory().getOrangeCount()-1);
+                            }
                         }
 
-                        if (hoeEquipped&&!tile.get(j+(i*y)).getHasRock()&&!tile.get(j+(i*y)).isPlowed()) {
-                            tile.get(j+(i*y)).setPlowed(true);
-                            image.setImage(new Image(getClass().getResourceAsStream("/pictures/Plowed.png")));
+                        if (hoeEquipped) {
+                            if(!tile.get(j+(i*y)).getHasRock()&&!tile.get(j+(i*y)).isPlowed()) {
+                                tile.get(j + (i * y)).setPlowed(true);
+                                image.setImage(new Image(getClass().getResourceAsStream("/pictures/Plowed.png")));
+                            }
+                            else if(tile.get(j+(i*y)).isPlowed()&&farmer.getMoney()>1&&tile.get(j+(i*y)).isHasPlant()){
+                                if(tile.get(j+(i*y)).getCrop().isWithered()) {
+                                    image.setImage(new Image(getClass().getResourceAsStream("/pictures/Soil.png")));
+                                    plant.imageProperty().set(null);
+                                    farmer.setMoney(farmer.getMoney() - 2);
+
+                                    tile.get(j + (i * y)).getCrop().setIsWithered(false);
+                                    tile.get(j + (i * y)).setHasPlant(false);
+                                    tile.get(j + (i * y)).setOccupied(false);
+                                    tile.get(j + (i * y)).setPlowed(false);
+                                    tile.get(j + (i * y)).setHasRock(false);
+
+                                    ((Button) grid[i][j]).setTooltip(new Tooltip("Ready for Plowing!"));
+                                    tile.get(j+(i*y)).setWaterUsed(0);
+                                    tile.get(j+(i*y)).setFertilizerUsed(0);
+                                }
+                            }
                         }
                         if (pickaxeEquipped) {
                             rock.setDisable(true);
@@ -223,19 +235,48 @@ public class GameController {
                             tile.get(j+(i*y)).setOccupied(false);
                         }
                         if (wateringCanEquipped) {
-                            if (!tile.get(j+(i*y)).isWatered() && tile.get(j+(i*y)).isPlowed()) {
+                            if (tile.get(j+(i*y)).isPlowed()&&tile.get(j+(i*y)).isHasPlant()&&(tile.get(j + (i * y)).getCrop().getWaterBonusLimit()>tile.get(j + (i * y)).getWaterUsed())) {
                                 image.setImage(new Image(getClass().getResourceAsStream("/pictures/SoilPlowedWatered.png")));
-
+                                tile.get(j + (i * y)).setWaterUsed(tile.get(j + (i * y)).getWaterUsed()+1);
                             }
                         }
                         if (scytheEquipped) {
-                            if(tile.get(j+(i*y)).isHasPlant()){
+                            if(tile.get(j+(i*y)).isHasPlant()&&tile.get(j+(i*y)).getCrop().isHarvestable()){
                                 image.setImage(new Image(getClass().getResourceAsStream("/pictures/Soil.png")));
+                                plant.imageProperty().set(null);
+                                if(tile.get(j+(i*y)).getFertilizerUsed()>=tile.get(j+(i*y)).getCrop().getFertilizerNeeded()&&tile.get(j+(i*y)).getFertilizerUsed()<=tile.get(j+(i*y)).getCrop().getFertilizerBonusLimit()){
+                                    tile.get(j+(i*y)).setFertilizerUsed(tile.get(j+(i*y)).getFertilizerUsed());
+                                }
+                                else if(tile.get(j+(i*y)).getFertilizerUsed()>tile.get(j+(i*y)).getCrop().getFertilizerBonusLimit()){
+                                    tile.get(j+(i*y)).setFertilizerUsed(tile.get(j+(i*y)).getCrop().getFertilizerBonusLimit());
+                                }
+                                farmer.setMoney(((farmer.getMoney()+tile.get(j+(i*y)).getCrop().computeSellPrice()+((((tile.get(j+(i*y)).getWaterUsed()
+                                        *(tile.get(j+(i*y)).getCrop().getBaseSell()*0.25))+(tile.get(j+(i*y)).getFertilizerUsed()*(tile.get(j+(i*y)).getCrop().getBaseSell()*0.5)))
+                                        *tile.get(j+(i*y)).getCrop().getProductsProd())-tile.get(j+(i*y)).getCrop().getHarvestCost()))));
+                                if(tile.get(j+(i*y)).getCrop().getCropType()==1){
+                                    farmer.setMoney(farmer.getMoney()+((tile.get(j+(i*y)).getCrop().getBaseSell()+((tile.get(j+(i*y)).getWaterUsed()
+                                            *(tile.get(j+(i*y)).getCrop().getBaseSell()*0.25))+(tile.get(j+(i*y)).getFertilizerUsed()*(tile.get(j+(i*y)).getCrop().getBaseSell()*0.5))))*0.05));
+                                }
+                                farmer.setExp(farmer.getExp()+tile.get(j+(i*y)).getCrop().getExpUp());
+                                tile.get(j+(i*y)).getCrop().setIsHarvestable(false);
+                                tile.get(j + (i * y)).getCrop().setIsWithered(false);
+                                tile.get(j + (i * y)).setHasPlant(false);
+                                tile.get(j + (i * y)).setOccupied(false);
+                                tile.get(j + (i * y)).setPlowed(false);
+                                tile.get(j + (i * y)).setHasRock(false);
+
+                                ((Button) grid[i][j]).setTooltip(new Tooltip("Ready for Plowing!"));
+                                tile.get(j+(i*y)).setWaterUsed(0);
+                                tile.get(j+(i*y)).setFertilizerUsed(0);
                             }
 
                         }
                         if (fertilizerEquipped) {
-
+                            if(farmer.getInventory().getFertilizerCount()>0&&!tile.get(j+(i*y)).isHasPlant()&&tile.get(j+(i*y)).isPlowed()){
+                                //add fertilizer picture here
+                                tile.get(j+(i*y)).setFertilizerUsed(tile.get(j+(i*y)).getFertilizerUsed()+1);
+                                farmer.getInventory().setFertilizerCount(farmer.getInventory().getFertilizerCount()-1);
+                            }
                         }
                         if (cursorEquipped) {
                             if (fruitMenu.isDisabled() && tile.get(j+(i*y)).isPlowed()) {
@@ -443,61 +484,91 @@ public class GameController {
                 });
 
                 buy.setOnAction(event -> {
-                    if(farmer.getMoney()>=(int)amount.getValue()) {
                         int amt = (int) amount.getValue();
                         switch (buyIndex) {
                             case 0:
-                                farmer.getInventory().setTurnipCount(farmer.getInventory().getTurnipCount() + amt);
-                                farmer.setMoney(farmer.getMoney() - farmer.getTur().getSeedCost() * (int) amount.getValue());
-                                gold.setText(farmer.getMoney() + "");
+                                if(farmer.getMoney()>=farmer.getTur().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setTurnipCount(farmer.getInventory().getTurnipCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getTur().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 1:
-                                farmer.getInventory().setCarrotCount(farmer.getInventory().getCarrotCount() + amt);
+                                if(farmer.getMoney()>=farmer.getC().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setCarrotCount(farmer.getInventory().getCarrotCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getC().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 2:
-                                farmer.getInventory().setTomatoCount(farmer.getInventory().getTomatoCount() + amt);
+                                if(farmer.getMoney()>=farmer.getTo().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setTomatoCount(farmer.getInventory().getTomatoCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getTo().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 3:
-                                farmer.getInventory().setPotatoCount(farmer.getInventory().getPotatoCount() + amt);
+                                if(farmer.getMoney()>=farmer.getP().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setPotatoCount(farmer.getInventory().getPotatoCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getP().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 4:
-                                farmer.getInventory().setRoseCount(farmer.getInventory().getRoseCount() + amt);
+                                if(farmer.getMoney()>=farmer.getR().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setRoseCount(farmer.getInventory().getRoseCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getR().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 5:
-                                farmer.getInventory().setTulipCount(farmer.getInventory().getTulipCount() + amt);
+                                if(farmer.getMoney()>=farmer.getTul().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setTulipCount(farmer.getInventory().getTulipCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getTul().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 6:
-                                farmer.getInventory().setTurnipCount(farmer.getInventory().getStargazerCount() + amt);
+                                if(farmer.getMoney()>=farmer.getSt().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setStargazerCount(farmer.getInventory().getStargazerCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getSt().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 7:
-                                farmer.getInventory().setSunflowerCount(farmer.getInventory().getSunflowerCount() + amt);
+                                if(farmer.getMoney()>=farmer.getSu().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setSunflowerCount(farmer.getInventory().getSunflowerCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getSu().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 8:
-                                farmer.getInventory().setMangoCount(farmer.getInventory().getMangoCount() + amt);
+                                if(farmer.getMoney()>=farmer.getM().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setMangoCount(farmer.getInventory().getMangoCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getM().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 9:
-                                farmer.getInventory().setAppleCount(farmer.getInventory().getAppleCount() + amt);
+                                if(farmer.getMoney()>=farmer.getA().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setAppleCount(farmer.getInventory().getAppleCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getA().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 10:
-                                farmer.getInventory().setBananaCount(farmer.getInventory().getBananaCount() + amt);
+                                if(farmer.getMoney()>=farmer.getB().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setBananaCount(farmer.getInventory().getBananaCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getB().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 11:
-                                farmer.getInventory().setOrangeCount(farmer.getInventory().getOrangeCount() + amt);
+                                if(farmer.getMoney()>=farmer.getO().getSeedCost() * (int)amount.getValue()) {
+                                    farmer.getInventory().setOrangeCount(farmer.getInventory().getOrangeCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getO().getSeedCost() * (int) amount.getValue());
+                                }
                                 break;
                             case 12:
-                                farmer.getInventory().setFertilizerCount(farmer.getInventory().getFertilizerCount() + amt);
-                                break;
-                            case 13:
-                                farmer.getInventory().setTurnipCount(farmer.getInventory().getTurnipCount() + amt);
+                                if(farmer.getMoney()>=farmer.getTool().getFertilizerPrice() * (int) amount.getValue()) {
+                                    farmer.getInventory().setFertilizerCount(farmer.getInventory().getFertilizerCount() + amt);
+                                    farmer.setMoney(farmer.getMoney() - farmer.getTool().getFertilizerPrice() * (int) amount.getValue());
+                                }
                                 break;
                             case 14:
-                                farmer.getInventory().setTurnipCount(farmer.getInventory().getTurnipCount() + amt);
-                                break;
-                            case 15:
-                                farmer.getInventory().setTurnipCount(farmer.getInventory().getTurnipCount() + amt);
+                                //Upgrade Farmer
                                 break;
                         }
-                    }
+
                 });
 
                 buyIndex=100;
@@ -531,7 +602,6 @@ public class GameController {
                             previewLabel.setText("Tomato");
                             buyIndex=2;
                             previewDesc.setText(farmer.getTo().display());
-
                         });
                         break;
                     case 3:
@@ -542,7 +612,6 @@ public class GameController {
                             previewLabel.setText("Potato");
                             buyIndex=3;
                             previewDesc.setText(farmer.getP().display());
-
                         });
                         break;
                     case 4:
@@ -553,7 +622,6 @@ public class GameController {
                             previewLabel.setText("Rose");
                             buyIndex=4;
                             previewDesc.setText(farmer.getR().display());
-
                         });
                         break;
                     case 5:
@@ -564,7 +632,6 @@ public class GameController {
                             previewLabel.setText("Tulip");
                             buyIndex=5;
                             previewDesc.setText(farmer.getTul().display());
-
                         });
                         break;
                     case 6:
@@ -575,7 +642,6 @@ public class GameController {
                             previewLabel.setText("Stargazer");
                             buyIndex=6;
                             previewDesc.setText(farmer.getSt().display());
-
                         });
                         break;
                     case 7:
@@ -586,7 +652,6 @@ public class GameController {
                             previewLabel.setText("Sunflower");
                             buyIndex=7;
                             previewDesc.setText(farmer.getSu().display());
-
                         });
                         break;
                     case 8:
@@ -597,7 +662,6 @@ public class GameController {
                             previewLabel.setText("Mango");
                             buyIndex=8;
                             previewDesc.setText(farmer.getM().display());
-
                         });
                         break;
                     case 9:
@@ -608,7 +672,6 @@ public class GameController {
                             previewLabel.setText("Apple");
                             buyIndex=9;
                             previewDesc.setText(farmer.getA().display());
-
                         });
                         break;
                     case 10:
@@ -619,7 +682,6 @@ public class GameController {
                             previewLabel.setText("Banana");
                             buyIndex=10;
                             previewDesc.setText(farmer.getB().display());
-
                         });
                         break;
                     case 11:
@@ -630,7 +692,6 @@ public class GameController {
                             previewLabel.setText("Orange");
                             buyIndex=11;
                             previewDesc.setText(farmer.getO().display());
-
                         });
                         break;
                     case 12:
@@ -643,9 +704,6 @@ public class GameController {
                             previewDesc.setText("Helps Grow Your Plants!");
                         });
                         break;
-                    case 13:
-
-                        break;
                     case 14:
                         fruitImage.setImage(new Image(getClass().getResourceAsStream("/pictures/Arrowhead.png")));
                         fruits.setOnAction(event -> {
@@ -653,13 +711,12 @@ public class GameController {
                             storePreview.setImage(new Image(getClass().getResourceAsStream("/pictures/Arrowhead.png")));
                             previewLabel.setText("Upgrade \nFarmer");
                             buyIndex=14;
-                            previewDesc.setText("");
+                            previewDesc.setText("Farmer (Lvl 0 & 0 OC): Earning/Buying: +/- 0, \nWater/Fertilizer Bonus Limit: +0, Harvest Time: -0%" +
+                                    "\nRegistered Farmer (Lvl 10 & 200 OC): Earning/Buying: +/- 2, \nWater/Fertilizer Bonus Limit: +0, Harvest Time: -5%" +
+                                    "\nDistinguished Farmer (Lvl 15 & 250 OC): Earning/Buying: +/- 3, \nWater/Fertilizer Bonus Limit: +1, Harvest Time: -10%" +
+                                    "\nHonorable Farmer (Lvl 20 & 350 OC): Earning/Buying: +/- 5, \nWater/Fertilizer Bonus Limit: +2, Harvest Time: -15%");
                         });
                         break;
-                    case 15:
-
-                        break;
-
                 }
 
                 fruits.setGraphic(fruitImage);
@@ -710,7 +767,7 @@ public class GameController {
                             System.out.println("Image Test");
                             inventoryPreview.setImage(new Image(getClass().getResourceAsStream("/pictures/Tomato_Seeds.png")));
                               inventoryLabel.setText("Tomato");
-                            seedAmount.setText(farmer.getInventory().getTomatoCount()+"");
+                            seedAmount.setText("x"+farmer.getInventory().getTomatoCount()+"");
                             inventoryDesc.setText(farmer.getTo().display());
                         });
                         break;
@@ -837,8 +894,6 @@ public class GameController {
             }
         }
 
-
-
         storeButton.setOnAction(event -> {
             if(storePane.isDisabled()){
                 storePane.setDisable(false);
@@ -876,7 +931,7 @@ public class GameController {
             inventoryPane.setOpacity(0.0);
         });
 
-        for(int a=0;a<2;a++) { //this is what I need to modify for tree planting
+        for(int a=0;a<2;a++) {
             for (int b = 0; b < 6; b++) {
 
                 Button cropsB = new Button();
@@ -898,7 +953,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getTurnipCount() > 0) {
                                 plantIndex = 0;
-                                farmer.getInventory().setTurnipCount(farmer.getInventory().getTurnipCount()-1);
                             }
                         });
                         break;
@@ -907,7 +961,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getCarrotCount() > 0) {
                                 plantIndex = 1;
-                                farmer.getInventory().setCarrotCount(farmer.getInventory().getCarrotCount()-1);
 
                             }
                         });
@@ -917,7 +970,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getTomatoCount() > 0) {
                                 plantIndex = 2;
-                                farmer.getInventory().setTomatoCount(farmer.getInventory().getTomatoCount()-1);
 
                             }
                         });
@@ -927,7 +979,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getPotatoCount() > 0) {
                                 plantIndex = 3;
-                                farmer.getInventory().setPotatoCount(farmer.getInventory().getPotatoCount()-1);
 
                             }
                         });
@@ -937,7 +988,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getRoseCount() > 0) {
                                 plantIndex = 4;
-                                farmer.getInventory().setRoseCount(farmer.getInventory().getRoseCount()-1);
 
                             }
                         });
@@ -947,7 +997,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getTulipCount() > 0) {
                                 plantIndex = 5;
-                                farmer.getInventory().setTulipCount(farmer.getInventory().getTulipCount()-1);
 
                             }
                         });
@@ -957,7 +1006,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getStargazerCount() > 0) {
                                 plantIndex = 6;
-                                farmer.getInventory().setStargazerCount(farmer.getInventory().getStargazerCount()-1);
 
                             }
                         });
@@ -967,7 +1015,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getSunflowerCount() > 0) {
                                 plantIndex = 7;
-                                farmer.getInventory().setSunflowerCount(farmer.getInventory().getSunflowerCount()-1);
 
                             }
                         });
@@ -976,9 +1023,7 @@ public class GameController {
                         cropsBImage.setImage(new Image(getClass().getResourceAsStream("/pictures/Apricot_Sapling.png")));
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getMangoCount() > 0) {
-
-                                    plantIndex = 8;
-                                    farmer.getInventory().setMangoCount(farmer.getInventory().getMangoCount() - 1);
+                                plantIndex = 8;
 
                             }
                         });
@@ -988,7 +1033,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getAppleCount() > 0) {
                                 plantIndex = 9;
-                                farmer.getInventory().setAppleCount(farmer.getInventory().getAppleCount()-1);
 
                             }
                         });
@@ -998,7 +1042,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getBananaCount() > 0) {
                                 plantIndex = 10;
-                                farmer.getInventory().setBananaCount(farmer.getInventory().getBananaCount()-1);
 
                             }
                         });
@@ -1008,7 +1051,6 @@ public class GameController {
                         cropsB.setOnAction(event -> {
                             if (farmer.getInventory().getOrangeCount() > 0) {
                                 plantIndex = 11;
-                                farmer.getInventory().setOrangeCount(farmer.getInventory().getOrangeCount()-1);
 
                             }
                         });
@@ -1035,6 +1077,8 @@ public class GameController {
 
         tile.get(j+(i*y)).setHasPlant(true);
         tile.get(j+(i*y)).setPlantType(type);
+
+
         AnimationTimer animationTimer = new AnimationTimer() {
             long time_now = System.nanoTime();
 
@@ -1050,38 +1094,68 @@ public class GameController {
                 } else if (elapse == 15) {
                     plant.setImage(new Image(getClass().getResourceAsStream("/pictures/"+seed+"_4.png")));
                 } else if (elapse == 20){
-                    plant.setImage(new Image(getClass().getResourceAsStream("/pictures/"+seed+"_5.png")));
+                    if((tile.get(j+(i*y)).getWaterUsed()<=tile.get(j+(i*y)).getCrop().getWaterBonusLimit()&&tile.get(j+(i*y)).getWaterUsed()>=tile.get(j+(i*y)).getCrop().getWaterNeeded())
+                            &&tile.get(j+(i*y)).getFertilizerUsed()>=tile.get(j+(i*y)).getCrop().getFertilizerNeeded()) {
+                        plant.setImage(new Image(getClass().getResourceAsStream("/pictures/" + seed + "_5.png")));
+                        tile.get(j+(i * y)).getCrop().setIsHarvestable(true);
+                        stop();
+                    }
+                    else {
+                        plant.setImage(new Image(getClass().getResourceAsStream("/pictures/Wither.png")));
+                        tile.get(j+(i*y)).getCrop().setIsWithered(true);
+                        stop();
+                    }
+                } else if (elapse == 40){
+                    plant.setImage(new Image(getClass().getResourceAsStream("/pictures/Wither.png")));
+                    tile.get(j+(i*y)).getCrop().setIsWithered(true);
                     stop();
                 }
             }
         };
         animationTimer.start();
+
+        switch (type){
+            case 0:
+                tile.get(j+(i*y)).setCrop(new Turnip());
+
+                break;
+            case 1:
+                tile.get(j+(i*y)).setCrop(new Carrot());
+                break;
+            case 2:
+                tile.get(j+(i*y)).setCrop(new Tomato());
+                break;
+            case 3:
+                tile.get(j+(i*y)).setCrop(new Potato());
+                break;
+            case 4:
+                tile.get(j+(i*y)).setCrop(new Rose());
+                break;
+            case 5:
+                tile.get(j+(i*y)).setCrop(new Tulip());
+                break;
+            case 6:
+                tile.get(j+(i*y)).setCrop(new Stargazer());
+                break;
+            case 7:
+                tile.get(j+(i*y)).setCrop(new Sunflower());
+                break;
+            case 8:
+                tile.get(j+(i*y)).setCrop(new Mango());
+                break;
+            case 9:
+                tile.get(j+(i*y)).setCrop(new Apple());
+                break;
+            case 10:
+                tile.get(j+(i*y)).setCrop(new Banana());
+                break;
+            case 11:
+                tile.get(j+(i*y)).setCrop(new Orange());
+                break;
+        }
+
+
+
         plantIndex=100;
     }
-
-    public void setOccupyAll(ImageView plant, int j, int i, int y){
-        try {
-            if (!tile.get(j + (i - 1) * y).getIsOccupied() && !tile.get(j + (i + 1) * y).getIsOccupied())
-                if ((!tile.get((j - 1) + (i - 1) * y).getIsOccupied() && !tile.get((j + 1) + (i - 1) * y).getIsOccupied())
-                        && (!tile.get((j - 1) + (i + 1) * y).getIsOccupied() && !tile.get((j + 1) + (i + 1) * y).getIsOccupied())
-                        && (!tile.get((j-1)+i*y).getIsOccupied() && !tile.get((j+1)+i*y).getIsOccupied())) {
-                    tile.get(j+(i*y)).setHasPlant(true);
-                    tile.get(j+(i-1)*y).setHasPlant(true);
-                    tile.get((j-1)+(i-1)*y).setHasPlant(true);
-                    tile.get((j+1)+(i-1)*y).setHasPlant(true);
-                    tile.get(j+(i+1)*y).setHasPlant(true);
-                    tile.get((j-1)+(i+1)*y).setHasPlant(true);
-                    tile.get((j+1)+(i+1)*y).setHasPlant(true);
-                    tile.get((j-1)+i*y).setHasPlant(true);
-                    tile.get((j+1)+i*y).setHasPlant(true);
-                    seedAnimation(plant, "Apricot_Stage", i, j, y, 8);
-                }
-                else
-                    System.out.println("BAWAL");
-        }
-        catch (IndexOutOfBoundsException e) {
-            seedAnimation(plant, "Apricot_Stage", i, j, y, 8);
-        }
-    }
-
 }
