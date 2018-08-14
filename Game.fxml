@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,17 +16,16 @@
    <children>
       <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Background.png" />
+            <Image url="@../pictures/Background.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="60.0" fitWidth="300.0" layoutX="596.0" layoutY="536.0" pickOnBounds="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Border.png" />
+            <Image url="@../pictures/Border.png" />
          </image>
       </ImageView>
       <GridPane fx:id="gridTile" layoutX="100.0" layoutY="100.0" prefHeight="400.0" prefWidth="800.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -34,86 +34,89 @@
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
       </GridPane>
       <GridPane fx:id="toolGrid" gridLinesVisible="true" layoutX="603.0" layoutY="541.0" prefHeight="48.0" prefWidth="288.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
       </GridPane>
       <GridPane gridLinesVisible="true" layoutX="556.0" layoutY="507.0" prefHeight="91.0" prefWidth="316.0" visible="false">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints maxHeight="48.66558837890625" minHeight="10.0" prefHeight="43.14239501953125" vgrow="SOMETIMES" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="48.66558837890625" minHeight="10.0" prefHeight="43.14239501953125" vgrow="SOMETIMES" />
             <RowConstraints maxHeight="42.5943603515625" minHeight="10.0" prefHeight="38.85760498046875" vgrow="SOMETIMES" />
-        </rowConstraints>
+         </rowConstraints>
       </GridPane>
-      <ProgressBar layoutX="253.0" layoutY="12.0" prefHeight="20.0" prefWidth="130.0" progress="0.0" />
       <Label fx:id="name" layoutX="64.0" layoutY="10.0" prefHeight="26.0" prefWidth="105.0" text="Name" textFill="WHITE">
          <font>
             <Font name="Stardew Valley Regular" size="22.0" />
          </font></Label>
-      <Label fx:id="level" layoutX="227.0" layoutY="14.0" text="1" textFill="WHITE">
+      <Label fx:id="level" layoutX="227.0" layoutY="11.0" text="1" textFill="WHITE">
          <font>
-            <Font name="Stardew Valley Regular" size="13.0" />
+            <Font name="Stardew Valley Regular" size="22.0" />
          </font></Label>
-      <Label fx:id="gold" layoutX="838.0" layoutY="14.0" text="Gold" textFill="WHITE">
+      <Label fx:id="gold" layoutX="819.0" layoutY="11.0" prefHeight="22.0" prefWidth="74.0" text="Gold" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Stardew Valley Regular" size="13.0" />
+            <Font name="Stardew Valley Regular" size="22.0" />
          </font></Label>
-      <Label fx:id="time" layoutX="945.0" layoutY="14.0" text="Time" textFill="#f2f2f2">
+      <Label fx:id="time" layoutX="945.0" layoutY="10.0" text="Time" textFill="WHITE">
          <font>
-            <Font name="Stardew Valley Regular" size="13.0" />
+            <Font name="Stardew Valley Regular" size="23.0" />
          </font></Label>
       <ImageView fitHeight="64.0" fitWidth="325.0" layoutX="77.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Layer%2021%20copy%2010.png" />
+            <Image url="@../pictures/Layer%2021%20copy%2010.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="339.0" layoutX="70.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Border.png" />
+            <Image url="@../pictures/Border.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="64.0" fitWidth="90.0" layoutX="104.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Layer%2021.png" />
+            <Image url="@../pictures/Layer%2021.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="64.0" fitWidth="90.0" layoutX="269.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Layer%2021.png" />
+            <Image url="@../pictures/Layer%2021.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="64.0" fitWidth="43.0" layoutX="236.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Layer%2022.png" />
+            <Image url="@../pictures/Layer%2022.png" />
          </image>
       </ImageView>
-      <Button layoutX="78.0" layoutY="540.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+      <Button fx:id="inventoryButton" layoutX="78.0" layoutY="540.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
       <Button fx:id="storeButton" layoutX="244.0" layoutY="540.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
       <Label layoutX="142.0" layoutY="554.0" text="Inventory" textFill="WHITE">
          <font>
@@ -125,28 +128,94 @@
             <Font name="Stardew Valley Regular" size="25.0" />
          </font>
       </Label>
-      <GridPane fx:id="fruitMenu" disable="true" gridLinesVisible="true" layoutX="182.0" layoutY="100.0" opacity="0.0" prefHeight="240.0" prefWidth="80.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-      </GridPane>
-      <ImageView fx:id="fruitMenuBack" disable="true" fitHeight="256.0" fitWidth="96.0" layoutY="92.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="fruitMenuBack" disable="true" fitHeight="256.0" fitWidth="96.0" layoutX="182.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Fruit%20Selection.png" />
+            <Image url="@../pictures/Fruit%20Selection.png" />
          </image>
       </ImageView>
-      <AnchorPane fx:id="storePane" disable="true" layoutX="350.0" layoutY="100.0" prefHeight="400.0" prefWidth="300.0">
+      <GridPane fx:id="fruitMenu" disable="true" gridLinesVisible="true" layoutX="190.0" layoutY="108.0" opacity="0.0" prefHeight="240.0" prefWidth="80.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+      <Label fx:id="itemSelection" alignment="CENTER" contentDisplay="CENTER" layoutX="412.0" layoutY="8.0" prefHeight="29.0" prefWidth="288.0" text="Selection" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Stardew Valley Regular" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="260.0" layoutY="13.0" textFill="WHITE" fx:id="xpStat">
+         <font>
+            <Font name="Stardew Valley Regular" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="47.0" fitWidth="25.0" layoutX="453.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2021.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="25.0" layoutX="431.0" layoutY="543.0" pickOnBounds="true">
+         <image>
+            <Image url="@../pictures/Layer%2022.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="upgradeButton" layoutX="436.0" layoutY="549.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" />
+      <AnchorPane fx:id="inventoryPane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
          <children>
-            <GridPane gridLinesVisible="true" layoutX="50.0" layoutY="90.0" prefHeight="50.0" prefWidth="200.0">
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="51.0" prefWidth="150.0" text="Vegetables" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="132.0" prefWidth="150.0" text="Flowers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="211.0" prefWidth="150.0" text="Fruit Trees" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="292.0" prefWidth="150.0" text="Others" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="inventoryGrid" layoutX="30.0" layoutY="80.0" prefHeight="290.0" prefWidth="200.0" vgap="30.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -155,9 +224,99 @@
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
             </GridPane>
-            <GridPane gridLinesVisible="true" layoutX="50.0" layoutY="170.0" prefHeight="50.0" prefWidth="200.0">
+            <Label layoutX="16.0" layoutY="26.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="inventoryBack" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+            <ImageView fitHeight="166.0" fitWidth="166.0" layoutX="320.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="210.0" fitWidth="165.0" layoutX="320.0" layoutY="190.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="inventoryPreview" fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="inventoryLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="45.0" prefHeight="31.0" prefWidth="150.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="inventoryDesc" layoutX="330.0" layoutY="200.0" prefHeight="190.0" prefWidth="150.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="340.0" layoutY="8.0" text="Information" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="110.0" layoutY="12.0" text="Inventory" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="seedAmount" layoutX="445.0" layoutY="156.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="storePane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="51.0" prefWidth="150.0" text="Vegetables" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="132.0" prefWidth="150.0" text="Flowers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="211.0" prefWidth="150.0" text="Fruit Trees" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="292.0" prefWidth="150.0" text="Others" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <GridPane fx:id="storeGrid" layoutX="30.0" layoutY="80.0" prefHeight="290.0" prefWidth="200.0" vgap="30.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -166,32 +325,282 @@
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-            </GridPane>
-            <GridPane gridLinesVisible="true" layoutX="50.0" layoutY="250.0" prefHeight="50.0" prefWidth="200.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
             </GridPane>
-            <GridPane gridLinesVisible="true" layoutX="50.0" layoutY="330.0" prefHeight="50.0" prefWidth="50.0">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-            </GridPane>
-            <Label layoutX="125.0" layoutY="65.0" text="Vegetables" />
-            <Label layoutX="135.0" layoutY="147.0" text="Flowers" />
-            <Label layoutX="127.0" layoutY="227.0" text="Fruit Trees" />
-            <Label layoutX="138.0" layoutY="306.0" text="Others" />
-            <Button fx:id="storeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" />
+            <Label layoutX="16.0" layoutY="26.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="storeBack" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+            <ImageView fitHeight="166.0" fitWidth="166.0" layoutX="320.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="210.0" fitWidth="165.0" layoutX="320.0" layoutY="190.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="storePreview" fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="previewLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="45.0" prefHeight="31.0" prefWidth="150.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="previewDesc" layoutX="330.0" layoutY="200.0" prefHeight="190.0" prefWidth="150.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="340.0" layoutY="8.0" text="Information" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="buy" layoutX="250.0" layoutY="115.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Buy">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Button>
+            <Label layoutX="130.0" layoutY="12.0" text="Store" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="242.0" layoutY="180.0" text="Total Cost:" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="displayCost" layoutX="275.0" layoutY="200.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="amount" blockIncrement="1.0" layoutX="270.0" layoutY="240.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="upgradePane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="farmerPic1" layoutX="56.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" text="Button" />
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="200.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="170.0" fitWidth="380.0" layoutX="60.0" layoutY="210.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2016.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="upgradeText" layoutX="72.0" layoutY="220.0" prefHeight="150.0" prefWidth="360.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="150.0" prefHeight="50.0" prefWidth="207.0" text="Farmer Upgrades" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="20.0" prefHeight="100.0" prefWidth="140.0" text="Registered Farmer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Stardew Valley Regular" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="20.0" prefHeight="100.0" prefWidth="140.0" text="Distinguished Farmer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Stardew Valley Regular" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="335.0" layoutY="20.0" prefHeight="100.0" prefWidth="140.0" text="Honorable Farmer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Stardew Valley Regular" size="26.0" />
+               </font>
+            </Label>
+            <Button fx:id="farmerPic11" layoutX="56.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" />
+            <Button fx:id="farmerPic2" layoutX="206.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" />
+            <Button fx:id="farmerPic3" layoutX="356.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorialPane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="51.0" prefWidth="150.0" text="About Game" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="132.0" prefWidth="150.0" text="Crops and Flowers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="211.0" prefWidth="150.0" text="Fruit Trees" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="292.0" prefWidth="150.0" text="Tools" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="26.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialBack" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+            <ImageView fitHeight="337.0" fitWidth="255.0" layoutX="236.0" layoutY="45.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="info" alignment="TOP_LEFT" graphicTextGap="8.0" layoutX="247.0" layoutY="61.0" prefHeight="303.0" prefWidth="234.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="314.0" layoutY="12.0" text="Information" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="learn" layoutX="36.0" layoutY="84.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="learnCF" layoutX="36.0" layoutY="160.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="learnFT" layoutX="37.0" layoutY="240.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="learnT" layoutX="37.0" layoutY="321.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="help" fitHeight="60.0" fitWidth="67.0" layoutX="926.0" layoutY="533.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/help.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="tutorialB" layoutX="926.0" layoutY="530.0" mnemonicParsing="false" opacity="0.0" prefHeight="64.0" prefWidth="60.0" />
+      <AnchorPane fx:id="tutorialCF" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="infoCF" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="16.0" layoutY="69.0" prefHeight="232.0" prefWidth="468.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="17.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialCFBack" layoutX="15.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="50.0" />
+            <Label layoutX="410.0" layoutY="15.0" text="Next" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialCFNext" layoutX="395.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorialFT" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="infoFT" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="16.0" layoutY="69.0" prefHeight="303.0" prefWidth="468.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="17.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialFTBack" layoutX="15.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="50.0" />
+            <Label layoutX="410.0" layoutY="15.0" text="Next" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialFTNext" layoutX="395.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
+            <Label layoutX="325.0" layoutY="15.0" text="Prev" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialFTPrev" layoutX="312.0" layoutY="16.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorialT" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="infoT" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="16.0" layoutY="69.0" prefHeight="303.0" prefWidth="468.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="17.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialTBack" layoutX="15.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="50.0" />
+            <Label layoutX="325.0" layoutY="15.0" text="Prev" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialTPrev" layoutX="312.0" layoutY="16.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
          </children>
       </AnchorPane>
    </children>
