@@ -1,37 +1,20 @@
 package model;
+
+/**
+ * The tool class holds the tool functions which are used to do things around the game
+ */
 public class Tools {
-    private int fertilizer;
-    private Tiles tile;
+    private int fertilizerPrice;
 
+    /**
+     * initializes the variables
+     */
     public Tools(){
+        fertilizerPrice=10;
 
     }
 
-    public void waterCan(){
-
-    }
-
-    public void plowTile(){
-        tile.setPlowed(true);
-    }
-
-    public void plowWither(){
-
-    }
-
-    public void pickAxe(){
-
-    }
-
-    public void fertilizer(){
-
-    }
-
-    public void addFertilizer(int fertilizer) {
-        this.fertilizer += fertilizer;
-    }
-
-    public int getFertilizer() {
-        return fertilizer;
+    public int getFertilizerPrice() {
+        return fertilizerPrice;
     }
 }

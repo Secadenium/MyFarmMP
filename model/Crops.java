@@ -4,7 +4,7 @@ public class Crops {
     private String seedName;
     private int cropType;
     private double harvestTime;
-    private double harvestTimeBonus;
+    private double harvestTimeTemp;
     private int waterNeeded;
     private int waterBonusLimit;
     private int fertilizerNeeded;
@@ -18,7 +18,24 @@ public class Crops {
     private boolean isWithered;
     private boolean isHarvestable;
     private int farmerType;
+    private double cropBonus;
 
+    /**
+     * This crop class holds all the values and variables for the seeds.
+     * It acts as a super class for all the subclasses of seeds.
+     * @param seedName
+     * @param cropType
+     * @param harvestTime
+     * @param waterNeeded
+     * @param waterBonusLimit
+     * @param fertilizerNeeded
+     * @param fertilizerBonusLimit
+     * @param harvestCost
+     * @param productsProd
+     * @param seedCost
+     * @param baseSell
+     * @param expUp
+     */
     public Crops (String seedName, int cropType, double harvestTime, int waterNeeded, int waterBonusLimit, int fertilizerNeeded,
                   int fertilizerBonusLimit, double harvestCost, int productsProd, int seedCost, double baseSell, int expUp){
         this.seedName=seedName;
@@ -31,33 +48,118 @@ public class Crops {
         this.seedCost=seedCost;
         this.baseSell=baseSell;
         this.expUp=expUp;
+        this.cropBonus=0;
         isWithered=false;
         isHarvestable=false;
         this.waterBonusLimit=waterBonusLimit;
         this.fertilizerBonusLimit=fertilizerBonusLimit;
     }
 
-    public void setHarvestTimeBonus(double harvestTimeBonus) {
-        this.harvestTimeBonus = harvestTimeBonus;
-    }
 
     public void setProductsProd(int prod){
         productsProd=prod;
     }
 
-    public void display(){
-        System.out.println("\nSeed Name: "+seedName);
-        System.out.println("Crop Type: "+cropType);
-        System.out.println("Harvest Time: "+harvestTime);
-        System.out.println("Water Needed: "+waterNeeded);
-        System.out.println("Water Bonus Limit: "+waterBonusLimit);
-        System.out.println("Fertilizer Needed: "+fertilizerNeeded);
-        System.out.println("Fertilizer Bonus Limit: "+fertilizerBonusLimit);
-        System.out.println("Products Produced: "+productsProd);
-        System.out.println("Seed Cost: "+seedCost);
-        System.out.println("Base Sell: "+baseSell);
-        System.out.println("Experience: "+expUp);
-        System.out.println("Wither Time: "+computeWither());
+    /**
+     * This method adjusts the special bonuses that is given when the farmer registers up
+     */
+    public void adjustBonus() {
+        switch (farmerType) {
+            case 0:
+                seedCost -= 0;
+                baseSell += 0;
+                waterBonusLimit += 0;
+                fertilizerBonusLimit += 0;
+                harvestTime = harvestTime - (harvestTime * 0.00);
+                break;
+            case 1:
+                seedCost -= 2;
+                baseSell += 2;
+                waterBonusLimit += 0;
+                fertilizerBonusLimit += 0;
+                harvestTimeTemp=harvestTime;
+                harvestTime = harvestTime - (harvestTime * 0.05);
+                break;
+            case 2:
+                seedCost -= 3;
+                baseSell += 3;
+                waterBonusLimit += 1;
+                fertilizerBonusLimit += 1;
+                harvestTimeTemp=harvestTime;
+                harvestTime = harvestTime - (harvestTime * 0.10);
+                break;
+            case 3:
+                seedCost -= 5;
+                baseSell += 5;
+                waterBonusLimit += 2;
+                fertilizerBonusLimit += 2;
+                harvestTimeTemp=harvestTime;
+                harvestTime = harvestTime - (harvestTime * 0.15);
+                break;
+        }
+    }
+
+    /**
+     * This method resets the bonuses of the crops
+     */
+        public void reverseBonus(){
+            switch(farmerType){
+                case 1:
+                    seedCost+=2;
+                    baseSell-=2;
+                    waterBonusLimit-=0;
+                    fertilizerBonusLimit-=0;
+                    harvestTime=harvestTimeTemp;
+                    break;
+                case 2:
+                    seedCost+=3;
+                    baseSell-=3;
+                    waterBonusLimit-=1;
+                    fertilizerBonusLimit-=1;
+                    harvestTime=harvestTimeTemp;
+                    System.out.println("farmer adjusted lvl 2");
+                    break;
+                case 3:
+                    seedCost+=5;
+                    baseSell-=5;
+                    waterBonusLimit-=2;
+                    fertilizerBonusLimit-=2;
+                    harvestTime=harvestTimeTemp;
+                    break;
+            }
+
+    }
+
+    /**
+     * This provides the additional bonuses depending on the level of the user
+     */
+    public void levelUpStats(){
+        baseSell+=1;
+        seedCost-=1;
+    }
+
+    /**
+     * Displays all the information about the seed
+     * @return
+     */
+    public String display(){
+        return "Seed Name: "+seedName+"\nCrop Type: "+cropType+"\nHarvest Time: "+harvestTime+"\nWater Needed: "+waterNeeded+
+                "\nFertilizer Needed: "+fertilizerNeeded+"\nProducts Produced: "+productsProd+"\nSeed Cost: "+seedCost+
+                "\nBase Sell: "+baseSell+"\nExperience: "+expUp+"\nWither Time: "+computeWither();
+    }
+
+    /**
+     * Displays the crop info when it's planted
+     * @return
+     */
+    public String displayInfoCrop(){
+        return "Seed Name: "+seedName+"\nHarvest Time: "+harvestTime+"\nWater Needed: "+waterNeeded+
+                "\nFertilizer Needed: "+fertilizerNeeded+"\nProducts Produced: "+productsProd+
+                "\nExperience: "+expUp+"\nWither Time: "+computeWither()+"\nHarvestable: "+isHarvestable;
+    }
+
+    public double computeSellPrice() {
+        return baseSell + cropBonus/*farmerBonus*/;
     }
 
     public double computeWither(){
@@ -75,4 +177,57 @@ public class Crops {
     public void setFarmerType(int farmerType) {
         this.farmerType = farmerType;
     }
+
+    public boolean isHarvestable() {
+        return isHarvestable;
+    }
+
+    public int getSeedCost() {
+        return seedCost;
+    }
+
+    public boolean isWithered() {
+        return isWithered;
+    }
+
+    public int getWaterBonusLimit() {
+        return waterBonusLimit;
+    }
+
+    public int getFertilizerBonusLimit() {
+        return fertilizerBonusLimit;
+    }
+
+    public int getWaterNeeded() {
+        return waterNeeded;
+    }
+
+    public int getFertilizerNeeded() {
+        return fertilizerNeeded;
+    }
+
+    public int getExpUp() {
+        return expUp;
+    }
+
+    public int getProductsProd() {
+        return productsProd;
+    }
+
+    public double getHarvestCost() {
+        return harvestCost;
+    }
+
+    public double getBaseSell() {
+        return baseSell;
+    }
+
+    public int getCropType() {
+        return cropType;
+    }
+
+    public double getHarvestTime() {
+        return harvestTime;
+    }
+
 }

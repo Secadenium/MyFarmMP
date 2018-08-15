@@ -1,7 +1,11 @@
 package model;
-import java.util.*;
 
-public class Tomato extends Crops{
+import java.util.*;
+/**
+ *This is the tomato crop class which extends the crop superclass.
+ * This provides the specific data of the apple crop.
+ */
+public class Tomato extends Crops {
     public Tomato(){
         super("Tomato",0,2.5,3,4,1,2,1,1,20,15,13);
         Random rand = new Random();

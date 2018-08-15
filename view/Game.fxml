@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,368 +12,43 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="gameLayout" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
+<AnchorPane fx:id="gameLayout" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GameController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="339.0" layoutX="331.0" layoutY="526.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Border.png" />
-         </image>
-      </ImageView>
-      <GridPane layoutX="100.0" layoutY="100.0" prefHeight="400.0" prefWidth="800.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="8">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="9">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="5">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="83.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="83.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="81.0" fitWidth="82.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
-               <image>
-                  <Image url="file:/Users/jeffcapistrano/Desktop/Soil.png" />
-               </image>
-            </ImageView>
-            <Button mnemonicParsing="false" opacity="0.0" prefHeight="99.0" prefWidth="118.0" GridPane.rowIndex="1" />
-            <Button fx:id="button01" mnemonicParsing="false" opacity="0.0" prefHeight="149.0" prefWidth="146.0" GridPane.columnIndex="1" />
-            <Button fx:id="button02" mnemonicParsing="false" opacity="0.0" prefHeight="220.0" prefWidth="265.0" GridPane.columnIndex="2" />
-            <Button fx:id="button03" mnemonicParsing="false" opacity="0.0" prefHeight="194.0" prefWidth="230.0" GridPane.columnIndex="3" />
-            <Button fx:id="button04" mnemonicParsing="false" opacity="0.0" prefHeight="229.0" prefWidth="352.0" GridPane.columnIndex="4" />
-            <Button fx:id="button05" mnemonicParsing="false" opacity="0.0" prefHeight="226.0" prefWidth="276.0" GridPane.columnIndex="5" />
-            <Button fx:id="button06" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="272.0" GridPane.columnIndex="6" />
-            <Button fx:id="button07" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="303.0" GridPane.columnIndex="7" />
-            <Button fx:id="button08" mnemonicParsing="false" opacity="0.0" prefHeight="232.0" prefWidth="308.0" GridPane.columnIndex="8" />
-            <Button fx:id="button09" mnemonicParsing="false" opacity="0.0" prefHeight="172.0" prefWidth="193.0" GridPane.columnIndex="9" />
-            <Button fx:id="button10" mnemonicParsing="false" opacity="0.0" prefHeight="154.0" prefWidth="152.0" GridPane.rowIndex="1" />
-            <Button fx:id="button20" mnemonicParsing="false" opacity="0.0" prefHeight="224.0" prefWidth="196.0" GridPane.rowIndex="2" />
-            <Button fx:id="button30" mnemonicParsing="false" opacity="0.0" prefHeight="208.0" prefWidth="207.0" GridPane.rowIndex="3" />
-            <Button fx:id="button40" mnemonicParsing="false" opacity="0.0" prefHeight="222.0" prefWidth="247.0" GridPane.rowIndex="4" />
-            <Button fx:id="button11" mnemonicParsing="false" opacity="0.0" prefHeight="171.0" prefWidth="180.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button fx:id="button21" mnemonicParsing="false" opacity="0.0" prefHeight="163.0" prefWidth="162.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button fx:id="button31" mnemonicParsing="false" opacity="0.0" prefHeight="196.0" prefWidth="192.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="button41" mnemonicParsing="false" opacity="0.0" prefHeight="152.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <Button fx:id="button12" mnemonicParsing="false" opacity="0.0" prefHeight="143.0" prefWidth="164.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button fx:id="button22" mnemonicParsing="false" opacity="0.0" prefHeight="167.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button fx:id="button32" mnemonicParsing="false" opacity="0.0" prefHeight="94.0" prefWidth="140.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Button fx:id="button42" mnemonicParsing="false" opacity="0.0" prefHeight="148.0" prefWidth="183.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Button fx:id="button13" mnemonicParsing="false" opacity="0.0" prefHeight="168.0" prefWidth="173.0" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button fx:id="button23" mnemonicParsing="false" opacity="0.0" prefHeight="240.0" prefWidth="201.0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button fx:id="button33" mnemonicParsing="false" opacity="0.0" prefHeight="156.0" prefWidth="182.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-            <Button fx:id="button43" mnemonicParsing="false" opacity="0.0" prefHeight="243.0" prefWidth="314.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-            <Button fx:id="button14" mnemonicParsing="false" opacity="0.0" prefHeight="182.0" prefWidth="301.0" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button fx:id="button24" mnemonicParsing="false" opacity="0.0" prefHeight="323.0" prefWidth="348.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button fx:id="button34" mnemonicParsing="false" opacity="0.0" prefHeight="325.0" prefWidth="326.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-            <Button fx:id="button44" mnemonicParsing="false" opacity="0.0" prefHeight="248.0" prefWidth="275.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-            <Button fx:id="button15" mnemonicParsing="false" opacity="0.0" prefHeight="138.0" prefWidth="198.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-            <Button fx:id="button25" mnemonicParsing="false" opacity="0.0" prefHeight="206.0" prefWidth="247.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button fx:id="button35" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="271.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-            <Button fx:id="button45" mnemonicParsing="false" opacity="0.0" prefHeight="230.0" prefWidth="328.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-            <Button fx:id="button16" mnemonicParsing="false" opacity="0.0" prefHeight="171.0" prefWidth="235.0" GridPane.columnIndex="6" GridPane.rowIndex="1" />
-            <Button fx:id="button26" mnemonicParsing="false" opacity="0.0" prefHeight="219.0" prefWidth="207.0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
-            <Button fx:id="button36" mnemonicParsing="false" opacity="0.0" prefHeight="133.0" prefWidth="158.0" GridPane.columnIndex="6" GridPane.rowIndex="3" />
-            <Button fx:id="button46" mnemonicParsing="false" opacity="0.0" prefHeight="311.0" prefWidth="281.0" GridPane.columnIndex="6" GridPane.rowIndex="4" />
-            <Button fx:id="button17" mnemonicParsing="false" opacity="0.0" prefHeight="142.0" prefWidth="163.0" GridPane.columnIndex="7" GridPane.rowIndex="1" />
-            <Button fx:id="button27" mnemonicParsing="false" opacity="0.0" prefHeight="140.0" prefWidth="198.0" GridPane.columnIndex="7" GridPane.rowIndex="2" />
-            <Button fx:id="button37" mnemonicParsing="false" opacity="0.0" prefHeight="250.0" prefWidth="284.0" GridPane.columnIndex="7" GridPane.rowIndex="3" />
-            <Button fx:id="button47" mnemonicParsing="false" opacity="0.0" prefHeight="252.0" prefWidth="285.0" GridPane.columnIndex="7" GridPane.rowIndex="4" />
-            <Button fx:id="button18" mnemonicParsing="false" opacity="0.0" prefHeight="129.0" prefWidth="178.0" GridPane.columnIndex="8" GridPane.rowIndex="1" />
-            <Button fx:id="button19" mnemonicParsing="false" opacity="0.0" prefHeight="153.0" prefWidth="208.0" GridPane.columnIndex="9" GridPane.rowIndex="1" />
-            <Button fx:id="button28" mnemonicParsing="false" opacity="0.0" prefHeight="226.0" prefWidth="302.0" GridPane.columnIndex="8" GridPane.rowIndex="2" />
-            <Button fx:id="button29" mnemonicParsing="false" opacity="0.0" prefHeight="170.0" prefWidth="227.0" GridPane.columnIndex="9" GridPane.rowIndex="2" />
-            <Button fx:id="button38" mnemonicParsing="false" opacity="0.0" prefHeight="153.0" prefWidth="242.0" GridPane.columnIndex="8" GridPane.rowIndex="3" />
-            <Button fx:id="button39" mnemonicParsing="false" opacity="0.0" prefHeight="163.0" prefWidth="235.0" GridPane.columnIndex="9" GridPane.rowIndex="3" />
-            <Button fx:id="button48" mnemonicParsing="false" opacity="0.0" prefHeight="195.0" prefWidth="216.0" GridPane.columnIndex="8" GridPane.rowIndex="4" />
-            <Button fx:id="button49" mnemonicParsing="false" opacity="0.0" prefHeight="342.0" prefWidth="233.0" GridPane.columnIndex="9" GridPane.rowIndex="4" />
-            <Button fx:id="button00" mnemonicParsing="false" opacity="0.0" prefHeight="154.0" prefWidth="152.0" />
-         </children>
-      </GridPane>
       <ImageView fitHeight="600.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jeffcapistrano/Desktop/Background.png" />
+            <Image url="@../pictures/Background.png" />
          </image>
       </ImageView>
-      <GridPane gridLinesVisible="true" layoutX="380.0" layoutY="540.0" prefHeight="50.0" prefWidth="325.0">
+      <ImageView fitHeight="60.0" fitWidth="300.0" layoutX="596.0" layoutY="536.0" pickOnBounds="true">
+         <image>
+            <Image url="@../pictures/Border.png" />
+         </image>
+      </ImageView>
+      <GridPane fx:id="gridTile" layoutX="100.0" layoutY="100.0" prefHeight="400.0" prefWidth="800.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <rotationAxis>
+            <Point3D />
+         </rotationAxis>
+      </GridPane>
+      <GridPane fx:id="toolGrid" gridLinesVisible="true" layoutX="603.0" layoutY="541.0" prefHeight="48.0" prefWidth="288.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -384,14 +60,6 @@
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
-         <children>
-            <Button fx:id="tool1" mnemonicParsing="false" prefHeight="174.0" prefWidth="158.0" />
-            <Button mnemonicParsing="false" prefHeight="102.0" prefWidth="87.0" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="178.0" prefWidth="159.0" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" prefHeight="159.0" prefWidth="136.0" GridPane.columnIndex="3" />
-            <Button mnemonicParsing="false" prefHeight="139.0" prefWidth="138.0" GridPane.columnIndex="4" />
-            <Button mnemonicParsing="false" prefHeight="149.0" prefWidth="165.0" GridPane.columnIndex="5" />
-         </children>
       </GridPane>
       <GridPane gridLinesVisible="true" layoutX="556.0" layoutY="507.0" prefHeight="91.0" prefWidth="316.0" visible="false">
         <columnConstraints>
@@ -407,22 +75,576 @@
             <RowConstraints maxHeight="42.5943603515625" minHeight="10.0" prefHeight="38.85760498046875" vgrow="SOMETIMES" />
         </rowConstraints>
       </GridPane>
-      <ProgressBar layoutX="253.0" layoutY="12.0" prefHeight="20.0" prefWidth="130.0" progress="0.0" />
-      <Label fx:id="name" layoutX="74.0" layoutY="14.0" text="NAME" textFill="WHITE">
+      <Label fx:id="name" layoutX="64.0" layoutY="10.0" prefHeight="26.0" prefWidth="105.0" text="Name" textFill="WHITE">
          <font>
-            <Font name="Stardew Valley Regular" size="13.0" />
+            <Font name="Stardew Valley Regular" size="22.0" />
          </font></Label>
-      <Label fx:id="level" layoutX="227.0" layoutY="14.0" text="1" textFill="WHITE">
+      <Label fx:id="level" layoutX="227.0" layoutY="11.0" text="1" textFill="WHITE">
          <font>
-            <Font name="Stardew Valley Regular" size="13.0" />
+            <Font name="Stardew Valley Regular" size="22.0" />
          </font></Label>
-      <Label fx:id="gold" layoutX="838.0" layoutY="14.0" text="Gold" textFill="WHITE">
+      <Label fx:id="gold" layoutX="819.0" layoutY="11.0" prefHeight="22.0" prefWidth="74.0" text="Gold" textAlignment="CENTER" textFill="WHITE">
          <font>
-            <Font name="Stardew Valley Regular" size="13.0" />
+            <Font name="Stardew Valley Regular" size="22.0" />
          </font></Label>
-      <Label fx:id="time" layoutX="945.0" layoutY="14.0" text="Time" textFill="#f2f2f2">
+      <Label fx:id="time" layoutX="945.0" layoutY="10.0" text="Time" textFill="WHITE">
          <font>
-            <Font name="Stardew Valley Regular" size="13.0" />
+            <Font name="Stardew Valley Regular" size="23.0" />
          </font></Label>
+      <ImageView fitHeight="64.0" fitWidth="325.0" layoutX="77.0" layoutY="540.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2021%20copy%2010.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="339.0" layoutX="70.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Border.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="90.0" layoutX="104.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2021.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="90.0" layoutX="269.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2021.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="43.0" layoutX="236.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2022.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="inventoryButton" layoutX="78.0" layoutY="540.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+      <Button fx:id="storeButton" layoutX="244.0" layoutY="540.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" />
+      <Label layoutX="142.0" layoutY="554.0" text="Inventory" textFill="WHITE">
+         <font>
+            <Font name="Stardew Valley Regular" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="328.0" layoutY="554.0" text="Store" textFill="WHITE">
+         <font>
+            <Font name="Stardew Valley Regular" size="25.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="fruitMenuBack" disable="true" fitHeight="256.0" fitWidth="96.0" layoutX="182.0" layoutY="100.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Fruit%20Selection.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="itemSelection" alignment="CENTER" contentDisplay="CENTER" layoutX="412.0" layoutY="8.0" prefHeight="29.0" prefWidth="288.0" text="Selection" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Stardew Valley Regular" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="253.0" layoutY="13.0" textFill="WHITE" fx:id="xpStat">
+         <font>
+            <Font name="Stardew Valley Regular" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="47.0" fitWidth="25.0" layoutX="453.0" layoutY="543.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2021.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="47.0" fitWidth="25.0" layoutX="431.0" layoutY="543.0" pickOnBounds="true">
+         <image>
+            <Image url="@../pictures/Layer%2022.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="upgradeButton" layoutX="436.0" layoutY="549.0" maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" />
+      <AnchorPane fx:id="inventoryPane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="51.0" prefWidth="150.0" text="Vegetables" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="132.0" prefWidth="150.0" text="Flowers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="211.0" prefWidth="150.0" text="Fruit Trees" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="292.0" prefWidth="150.0" text="Others" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <GridPane fx:id="inventoryGrid" layoutX="30.0" layoutY="80.0" prefHeight="290.0" prefWidth="200.0" vgap="30.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <Label layoutX="16.0" layoutY="26.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="inventoryBack" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+            <ImageView fitHeight="166.0" fitWidth="166.0" layoutX="320.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="210.0" fitWidth="165.0" layoutX="320.0" layoutY="190.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="inventoryPreview" fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="inventoryLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="45.0" prefHeight="31.0" prefWidth="150.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="inventoryDesc" layoutX="330.0" layoutY="200.0" prefHeight="190.0" prefWidth="150.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="340.0" layoutY="8.0" text="Information" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Label layoutX="110.0" layoutY="12.0" text="Inventory" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="seedAmount" layoutX="445.0" layoutY="156.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="32.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="storePane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <ImageView layoutX="22.0" layoutY="230.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/ShopList.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="51.0" prefWidth="150.0" text="Vegetables" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="132.0" prefWidth="150.0" text="Flowers" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="211.0" prefWidth="150.0" text="Fruit Trees" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="292.0" prefWidth="150.0" text="Others" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font></Label>
+            <GridPane fx:id="storeGrid" layoutX="30.0" layoutY="80.0" prefHeight="290.0" prefWidth="200.0" vgap="30.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <Label layoutX="16.0" layoutY="26.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="storeBack" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+            <ImageView fitHeight="166.0" fitWidth="166.0" layoutX="320.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="210.0" fitWidth="165.0" layoutX="320.0" layoutY="190.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="storePreview" fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="previewLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="330.0" layoutY="45.0" prefHeight="31.0" prefWidth="150.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="previewDesc" layoutX="330.0" layoutY="200.0" prefHeight="190.0" prefWidth="150.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="340.0" layoutY="8.0" text="Information" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="buy" layoutX="250.0" layoutY="115.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="60.0" text="Buy">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Button>
+            <Label layoutX="130.0" layoutY="12.0" text="Store" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="242.0" layoutY="180.0" text="Total Cost:" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="19.0" />
+               </font>
+            </Label>
+            <Label fx:id="displayCost" layoutX="275.0" layoutY="200.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="15.0" />
+               </font>
+            </Label>
+            <Slider fx:id="amount" blockIncrement="1.0" layoutX="270.0" layoutY="240.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" orientation="VERTICAL" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="upgradePane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="farmerPic1" layoutX="56.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" text="Button" />
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="50.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="200.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="350.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="170.0" fitWidth="380.0" layoutX="60.0" layoutY="210.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2016.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="upgradeText" layoutX="66.0" layoutY="218.0" prefHeight="100.0" prefWidth="366.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="upgradeName" alignment="CENTER" contentDisplay="CENTER" layoutX="110.0" prefHeight="50.0" prefWidth="279.0" text="Regular Farmer" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="20.0" prefHeight="100.0" prefWidth="140.0" text="Registered Farmer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Stardew Valley Regular" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="180.0" layoutY="20.0" prefHeight="100.0" prefWidth="140.0" text="Distinguished Farmer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Stardew Valley Regular" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="335.0" layoutY="20.0" prefHeight="100.0" prefWidth="140.0" text="Honorable Farmer" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Stardew Valley Regular" size="26.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="64.0" fitWidth="43.0" layoutX="221.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Layer%2022.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="64.0" fitWidth="90.0" layoutX="256.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../pictures/Layer%2021.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="upgradeBuy" disable="true" layoutX="229.0" layoutY="318.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+            <Button fx:id="farmerPic1" layoutX="56.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" />
+            <Button fx:id="farmerPic2" layoutX="206.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" />
+            <Button fx:id="farmerPic3" layoutX="356.0" layoutY="106.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="88.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorialPane" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="51.0" prefWidth="150.0" text="About Game" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="132.0" prefWidth="150.0" text="Crops" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="211.0" prefWidth="150.0" text="Notes" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="292.0" prefWidth="150.0" text="Tools" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="16.0" layoutY="26.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialBack" layoutX="13.0" layoutY="13.0" mnemonicParsing="false" opacity="0.0" prefHeight="50.0" prefWidth="50.0" />
+            <ImageView fitHeight="337.0" fitWidth="255.0" layoutX="236.0" layoutY="45.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2015.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="info" alignment="TOP_LEFT" disable="true" graphicTextGap="8.0" layoutX="250.0" layoutY="63.0" opacity="0.0" prefHeight="301.0" prefWidth="227.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="314.0" layoutY="12.0" text="Information" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="learn" layoutX="36.0" layoutY="84.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="learnCF" layoutX="36.0" layoutY="160.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="learnFT" layoutX="37.0" layoutY="240.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="learnT" layoutX="37.0" layoutY="321.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="187.0" text="Open">
+               <font>
+                  <Font name="Stardew Valley Regular" size="24.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="64.0" fitWidth="90.0" layoutX="947.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2021.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="64.0" fitWidth="43.0" layoutX="912.0" layoutY="533.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../pictures/Layer%2022.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="tutorialB" layoutX="920.0" layoutY="541.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="?" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Stardew Valley Regular" size="28.0" />
+         </font></Button>
+      <AnchorPane fx:id="choicePane" disable="true" layoutX="400.0" layoutY="200.0" opacity="0.0" prefHeight="142.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/Group%2016.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="choiceText" alignment="CENTER" layoutX="2.0" layoutY="5.0" prefHeight="75.0" prefWidth="195.0" text="Are you sure?" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="yesButton" layoutX="30.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Yes">
+               <font>
+                  <Font name="Stardew Valley Regular" size="19.0" />
+               </font>
+            </Button>
+            <Button fx:id="noButton" layoutX="120.0" layoutY="80.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="No">
+               <font>
+                  <Font name="Stardew Valley Regular" size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorialCF" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="infoCF" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="9.0" layoutY="51.0" prefHeight="337.0" prefWidth="482.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="17.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialCFBack" layoutX="15.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="50.0" />
+            <Label layoutX="410.0" layoutY="15.0" text="Next" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialCFNext" layoutX="395.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="tutorialFT" disable="true" layoutX="250.0" layoutY="100.0" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+         <children>
+            <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../pictures/ShopMenu.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="infoFT" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="11.0" layoutY="53.0" prefHeight="337.0" prefWidth="482.0" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="17.0" text="Close" textFill="#fffbfb">
+               <font>
+                  <Font name="Stardew Valley Regular" size="28.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialFTBack" layoutX="15.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="50.0" />
+            <Label layoutX="410.0" layoutY="15.0" text="Next" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialFTNext" layoutX="395.0" layoutY="14.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
+            <Label layoutX="325.0" layoutY="15.0" text="Prev" textFill="WHITE">
+               <font>
+                  <Font name="Stardew Valley Regular" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="tutorialFTPrev" layoutX="312.0" layoutY="16.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
+            <AnchorPane fx:id="tutorialT" disable="true" opacity="0.0" prefHeight="400.0" prefWidth="500.0">
+               <children>
+                  <ImageView fitHeight="400.0" fitWidth="500.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../pictures/ShopMenu.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="infoT" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="9.0" layoutY="52.0" prefHeight="337.0" prefWidth="482.0" textFill="WHITE">
+                     <font>
+                        <Font name="Stardew Valley Regular" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="17.0" text="Close" textFill="#fffbfb">
+                     <font>
+                        <Font name="Stardew Valley Regular" size="28.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="tutorialTBack" layoutX="15.0" layoutY="11.0" mnemonicParsing="false" opacity="0.0" prefHeight="40.0" prefWidth="50.0" />
+                  <Label layoutX="325.0" layoutY="15.0" text="Prev" textFill="WHITE">
+                     <font>
+                        <Font name="Stardew Valley Regular" size="29.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="tutorialTPrev" layoutX="312.0" layoutY="16.0" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="74.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <GridPane fx:id="fruitMenu" disable="true" gridLinesVisible="true" opacity="0.0" prefHeight="240.0" prefWidth="80.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
    </children>
 </AnchorPane>

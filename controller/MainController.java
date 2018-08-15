@@ -1,6 +1,11 @@
+/**
+ * This Main Controller controls the GUI of the Starting menu
+ */
+
 package controller;
 
 import application.Main;
+import model.Farmer;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,6 +14,9 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 
+/**
+ * This holds the buttons and codes for the starting menu
+ */
 public class MainController {
     @FXML
     private Button startButton;
@@ -22,13 +30,14 @@ public class MainController {
     private TextField userName;
 
     private Main mainM;
-    private GameController game;
 
+    /**
+     * initializes the video and song
+     * changes scene towards the game scene
+     */
     public void initialize(){
-        game = new GameController();
 
-        Media media = new Media("file:/Users/jeffcapistrano/Desktop/Scene.mp4");
-        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        MediaPlayer mediaPlayer = new MediaPlayer(new Media(getClass().getResource("/pictures/Scene.mp4").toExternalForm()));
         mediaPlayer.setAutoPlay(true);
         mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         menuMedia.setMediaPlayer(mediaPlayer);
@@ -36,8 +45,7 @@ public class MainController {
 
         });
 
-        Media media1 = new Media("file:/Users/jeffcapistrano/Desktop/Song.mp3");
-        MediaPlayer mediaPlayer1 = new MediaPlayer(media1);
+        MediaPlayer mediaPlayer1 = new MediaPlayer(new Media(getClass().getResource("/pictures/Song.mp3").toExternalForm()));
         mediaPlayer1.setAutoPlay(true);
         mediaPlayer1.setCycleCount(MediaPlayer.INDEFINITE);
         menuMusic.setMediaPlayer(mediaPlayer1);
@@ -53,14 +61,14 @@ public class MainController {
         startButton.setOnAction(event -> {
             mainM = new application.Main();
             System.out.println("CHECK START BUTTON");
+            mainM.setNameName(userName.getText());
             try {
                 mainM.changeScene("/view/Game.fxml");
-                game.setUsername(userName.getText());
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
             mediaPlayer.stop();
-            //mediaPlayer1.stop();
         });
     }
 }
